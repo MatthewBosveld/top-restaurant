@@ -1,5 +1,6 @@
 import { createHome } from "./home";
 import { createMenu } from "./menu";
+import { appendNewTab } from "./index";
 
 // Header
 function createHeader() {
@@ -30,7 +31,11 @@ function createNavItems() {
   navItemsContainer.classList.add("nav-items");
 
   navItemsArray.forEach((item) => {
-    const navItem = document.createElement("p");
+    const navItem = document.createElement("div");
+    navItem.classList.add("nav-item");
+    const itemLowercase = item.toLowerCase();
+    navItem.setAttribute("id", `nav-${itemLowercase}`);
+    navItem.setAttribute("target-tab", `${itemLowercase}`);
     navItem.textContent = item;
     navItemsContainer.appendChild(navItem);
   });
@@ -38,36 +43,49 @@ function createNavItems() {
   return navItemsContainer;
 }
 
+function getNavItems() {
+  return createNavItems().childNodes;
+}
+
 // Main
 function createMainContainer() {
   const mainContainer = document.createElement("main");
   mainContainer.classList.add("main-container");
+  mainContainer.setAttribute("id", "main-container");
   document.body.appendChild(mainContainer);
 
   return mainContainer;
-}
-function appendCurrentTab(mainContainer, currentTab) {
-  mainContainer.appendChild(currentTab);
 }
 
 // Footer
 function createFooter() {
   const footerContainer = document.createElement("footer");
   footerContainer.classList.add("footer-container");
+
+  const footerCopyright = document.createElement("p");
+  footerCopyright.textContent = "© 2023 Red Dragon Sushi";
+  footerContainer.appendChild(footerCopyright);
+
+  const footerCreated = document.createElement("p");
+  footerCreated.textContent = "Created by Matthew Bosveld";
+  footerContainer.appendChild(footerCreated);
+
   document.body.appendChild(footerContainer);
 
   return footerContainer;
 }
 
-// Page creation
+// Page creation (landing on home)
 function initializeWebsite() {
   const header = createHeader();
   const main = createMainContainer();
-  const home = appendCurrentTab(main, createHome());
+  const home = appendNewTab(main, createHome()); //! set to Menu/Contact for testing. Set to Home when done.
   const footer = createFooter();
 
   return { header, main };
 }
 export default initializeWebsite;
+export { createNavbar, createNavItems, getNavItems, createMainContainer };
+
 // add all into one initializeWebsite() function that runs on page load in index.js, starting with home.
 // import createHome() from home.js to run inside of initializeWebsite, and set the contents.

@@ -1,22 +1,20 @@
 export function createHome() {
   const homeContainer = document.createElement("div");
+  homeContainer.classList.add("home-container");
   //! add id
 
   const backgroundImg = createBackgroundImg();
   homeContainer.appendChild(backgroundImg);
 
   const hero = createHero();
-  homeContainer.appendChild(hero);
 
+  homeContainer.appendChild(hero);
   return homeContainer;
 }
 
 function createBackgroundImg() {
   const backgroundImgContainer = document.createElement("div");
-  const backgroundImg = document.createElement("img");
-  backgroundImg.src = "./img/luc-bercoth-4ykELaXgeOM-unsplash.jpg";
   backgroundImgContainer.classList.add("background-img");
-  backgroundImgContainer.appendChild(backgroundImg);
 
   return backgroundImgContainer;
 }
@@ -33,6 +31,7 @@ function createHero() {
 
   const heroButtons = createHeroButtons();
   hero.appendChild(heroButtons);
+
   return hero;
 }
 
@@ -70,10 +69,13 @@ function createHeroButtons() {
 
   const heroMenuBtn = document.createElement("button");
   heroMenuBtn.classList.add("hero-menu-btn");
+  heroMenuBtn.setAttribute("id", "hero-menu-btn");
+  heroMenuBtn.setAttribute("target-tab", "menu");
   heroMenuBtn.textContent = "View our menu";
 
   const heroBookBtn = document.createElement("button");
   heroBookBtn.classList.add("hero-book-btn");
+  heroBookBtn.setAttribute("id", "hero-book-btn");
   heroBookBtn.textContent = "Book a table";
 
   heroButtonContainer.appendChild(heroMenuBtn);
