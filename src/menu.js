@@ -51,7 +51,7 @@ function createMenuContent() {
 
     menuCategoryContainer.appendChild(menuCategoryTitle);
 
-    // Items container (for grid display, leaving the category title out)
+    // Items container (for grid display, leaving the category title out.)
 
     const menuItemsContainer = document.createElement("div");
     menuItemsContainer.classList.add("menu-items-container");
