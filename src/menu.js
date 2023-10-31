@@ -28,7 +28,28 @@ function createMenuContent() {
   const menuContentContainer = document.createElement("div");
   menuContentContainer.classList.add("menu-content-container");
 
-  const menuCategoryArray = ["Specials", "Maki", "Nigiri", "Uramaki", "Sides"];
+  // const menuCategoryArray = ["Specials", "Maki", "Nigiri", "Uramaki", "Sides"];
+  const menuCategoryArray = [
+    { name: "Specials", description: "" },
+    {
+      name: "Maki",
+      description:
+        "Rice rolls wrapped in nori with your choice of filling (8 pc.)",
+    },
+    {
+      name: "Nigiri",
+      description:
+        "A bed of seasoned rice, covered with your topping of choice (2 pc.)",
+    },
+    {
+      name: "Uramaki",
+      description: "Sushi with a twist - inside out maki rolls (8 pc.)",
+    },
+    {
+      name: "Sides",
+      description: "",
+    },
+  ];
   //! make categories into objects (name + desc)
 
   menuCategoryArray.forEach((category) => {
@@ -43,12 +64,12 @@ function createMenuContent() {
     //add category name and description
     const categoryName = document.createElement("h2");
     categoryName.classList.add("menu-category-name");
-    categoryName.textContent = category; //! would become category.name
+    categoryName.textContent = category.name; //! would become category.name
     menuCategoryTitle.appendChild(categoryName);
 
     const categoryDescription = document.createElement("p");
     categoryDescription.classList.add("menu-category-description");
-    categoryDescription.textContent = "Description placeholder"; //! category.description
+    categoryDescription.textContent = category.description;
     menuCategoryTitle.appendChild(categoryDescription);
 
     menuCategoryContainer.appendChild(menuCategoryTitle);
@@ -100,7 +121,7 @@ function createMenuContent() {
 // Filter items per category
 function filterItems(category) {
   const menuItemsArray = createMenuItemsArray();
-  return menuItemsArray.filter((item) => item.category === category);
+  return menuItemsArray.filter((item) => item.category === category.name);
 }
 
 // Menu Item creation
@@ -115,6 +136,7 @@ class MenuItem {
 
 function createMenuItemsArray() {
   const menuItemsArray = [
+    //Specials
     new MenuItem(
       "Dragon's Roast",
       "27.50",
@@ -152,7 +174,116 @@ function createMenuItemsArray() {
       "Specials"
     ),
 
-    new MenuItem("Coming soon", "Coming soon", "Coming soon", "Maki"),
+    //Maki
+    new MenuItem(
+      "Salmon Maki",
+      "8.00",
+      "Classic salmon sushi roll with fresh cucumber and seasoned rice, wrapped in nori seaweed, served with wasabi and soy sauce.",
+      "Maki"
+    ),
+    new MenuItem(
+      "Tuna Maki",
+      "8.00",
+      "Delicious tuna sushi roll with crisp cucumber and seasoned rice, wrapped in nori seaweed, accompanied by wasabi and soy sauce.",
+      "Maki"
+    ),
+    new MenuItem(
+      "Spicy Tuna Crunch",
+      "8.50",
+      "A fiery delight with spicy tuna, cucumber, and tempura flakes inside, crowned with spicy mayo and a touch of green onions.",
+      "Maki"
+    ),
+    new MenuItem(
+      "Crispy Crab",
+      "9.25",
+      "A textural triumph with a blend of Welsh crab, avocado, and cucumber inside, encased in crispy panko breadcrumbs for that perfect crunch.",
+      "Maki"
+    ),
+
+    //Nigiri
+    new MenuItem(
+      "Salmon Nigiri",
+      "2.75",
+      "Fresh, buttery Welsh salmon slices perched atop seasoned rice, a classic and timeless favorite.",
+      "Nigiri"
+    ),
+    new MenuItem(
+      "Tuna Nigiri",
+      "2.75",
+      "Tender tuna slices on a bed of perfectly seasoned rice, offering a delectable harmony of flavors.",
+      "Nigiri"
+    ),
+    new MenuItem(
+      "Ebi Nigiri",
+      "2.75",
+      "Succulent, sweet shrimp resting atop seasoned rice, a delightful choice for seafood lovers.",
+      "Nigiri"
+    ),
+    new MenuItem(
+      "Tamago Nigiri",
+      "2.50",
+      "Sweet and fluffy Japanese omelet, a delightful addition to our nigiri selection.",
+      "Nigiri"
+    ),
+
+    //Uramaki
+    new MenuItem(
+      "California Dream",
+      "8.00",
+      "A California roll reimagined with real crab, cucumber, and avocado inside, topped with a layer of fresh masago (capelin roe) for an extra burst of flavor.",
+      "Uramaki"
+    ),
+    new MenuItem(
+      "Sunset Roll",
+      "8.25",
+      " A taste of the tropics with mango, shrimp tempura, and cucumber inside, wrapped in rice and nori, and garnished with sweet chili sauce.",
+      "Uramaki"
+    ),
+    new MenuItem(
+      "Red Dragon Roll",
+      "9.50",
+      "Avocado, cucumber, and tamago come together for a flavorful dance inside this roll, crowned with a sizzling seared tuna, togarashi kick, mild srirachamayo, and a dash of unagi sauce. It's all tied up with a crispy flourish of fried onions and a burst of spring onion freshness!",
+      "Uramaki"
+    ),
+
+    new MenuItem(
+      "Volcano Roll",
+      "8.75",
+      "A fiery twist with spicy baked scallops, avocado, and cucumber inside, topped with a spicy mayo eruption.",
+      "Uramaki"
+    ),
+
+    //Sides
+    new MenuItem(
+      "Seoul-ful Chicken Delight",
+      "7.50",
+      "Our Korean Fried Chicken is an irresistible blend of crispy, succulent British chicken pieces, drenched in a sweet and spicy gochujang sauce for a harmonious fusion of flavors that's sure to make your taste buds dance.",
+      "Sides"
+    ),
+    new MenuItem(
+      "Prawn Gyoza Gems",
+      "4.00",
+      "These delectable dumplings are filled with plump prawns and a delicate medley of seasonings, carefully wrapped in a thin gyoza skin, and served with a tangy dipping sauce for a delightful taste of Wales' coastal treasures.",
+      "Sides"
+    ),
+    new MenuItem(
+      "Chicken Gyoza Classics",
+      "4.00",
+      "Our Chicken Gyoza are savory parcels of minced chicken and aromatic herbs, skillfully folded into delicate gyoza wrappers, and served with a zesty dipping sauce, a delightful nod to Japanese tradition.",
+      "Sides"
+    ),
+    new MenuItem(
+      "Edamame Elegance",
+      "2.50",
+      "Our Edamame is a simple yet elegant dish of young soybeans lightly steamed and sprinkled with sea salt, offering a delightful and healthy snack straight from the heart of Japanese cuisine.",
+      "Sides"
+    ),
+    new MenuItem(
+      "Veggie Gyoza Harmony",
+      "3.50",
+      " Our Vegetable Gyoza is a delightful blend of Welsh home grown garden-fresh vegetables, masterfully folded into gyoza wrappers, and served with a soy-based dipping sauce, offering a plant-based twist on the Japanese classic.",
+      "Sides"
+    ),
   ];
   return menuItemsArray;
 }

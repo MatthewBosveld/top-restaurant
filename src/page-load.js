@@ -79,7 +79,7 @@ function createFooter() {
 function initializeWebsite() {
   const header = createHeader();
   const main = createMainContainer();
-  const home = appendNewTab(main, createHome()); //! set to Menu/Contact for testing. Set to Home when done.
+  const home = appendNewTab(main, createMenu()); //! set to Menu/Contact for testing. Set to Home when done.
   const footer = createFooter();
 
   return { header, main };

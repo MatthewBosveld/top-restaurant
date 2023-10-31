@@ -177,7 +177,7 @@ main {
 }
 
 .menu-category-container {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .menu-category-title {
   display: flex;
@@ -185,6 +185,10 @@ main {
   justify-content: space-between;
   border-bottom: #e4e4e4 solid 1px;
   margin: 5px 0;
+}
+.menu-category-description {
+  font-weight: lighter;
+  font-size: 14px;
 }
 
 .menu-items-container {
