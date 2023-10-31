@@ -51,7 +51,7 @@ function createMenuContent() {
 
     menuCategoryContainer.appendChild(menuCategoryTitle);
 
-    // Items container (for grid display, leaving the category title out.)
+    // Items container (for grid display, leaving the category title out.npm)
 
     const menuItemsContainer = document.createElement("div");
     menuItemsContainer.classList.add("menu-items-container");
@@ -143,7 +143,6 @@ function createMenuItemsArray() {
       "A delightful transformation of the classic British dessert, this unique sushi variant features sweet and date-infused rice, wrapped in nori, and drizzled with a decadent toffee sauce. It's a harmonious blend of textures and flavours, combining the best of Japanese and British culinary traditions in a single, sweet sushi delight.",
       "Specials"
     ),
-    new MenuItem("Sticky Toffee Sushi", "9.50", "Specials"),
     new MenuItem(
       "Eton Sakura Swirl",
       "27.50",
