@@ -169,7 +169,7 @@ function createMenuItemsArray() {
     ),
     new MenuItem(
       "Eton Sakura Swirl",
-      "27.50",
+      "8.00",
       "A playful dessert featuring sweet sushi rolls filled with fresh strawberries, cream, and crumbled meringue, creating a delightful twist on the classic Eton Mess.",
       "Specials"
     ),
