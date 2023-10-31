@@ -1,3 +1,5 @@
+import logo from "./img/logo.png";
+
 export function createHome() {
   const homeContainer = document.createElement("div");
   homeContainer.classList.add("home-container");
@@ -38,7 +40,7 @@ function createHero() {
 function createHeroLogo() {
   const heroLogo = document.createElement("img");
   heroLogo.classList.add("hero-logo");
-  heroLogo.src = "./img/logo.png";
+  heroLogo.src = logo;
 
   return heroLogo;
 }

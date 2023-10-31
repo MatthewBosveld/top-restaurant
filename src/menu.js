@@ -1,3 +1,5 @@
+import logo from "./img/logo.png";
+
 export function createMenu() {
   // menu container
   const menuContainer = document.createElement("div");
@@ -16,7 +18,7 @@ export function createMenu() {
 
 function createMenuLogo() {
   const menuLogo = document.createElement("img");
-  menuLogo.src = "./img/logo.png";
+  menuLogo.src = logo;
   menuLogo.classList.add("menu-logo");
 
   return menuLogo;
