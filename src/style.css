@@ -45,12 +45,13 @@ header {
   width: 100%;
   background-color: hsla(139, 73%, 12%);
 }
-
+nav {
+  height: 100%;
+}
 .nav-items {
   display: flex;
   width: 580px;
-  height: 30px;
-  margin: 20px auto;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
   color: #e4e4e4;
