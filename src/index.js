@@ -2,6 +2,7 @@ import initializeWebsite, { createMainContainer } from "./page-load";
 import { createNavbar, createNavItems, getNavItems } from "./page-load";
 import { createMenu } from "./menu";
 import { createHome } from "./home";
+import { createContact } from "./contact";
 
 import "./style.css";
 
@@ -83,7 +84,7 @@ function switchTab(targetTab) {
     currentTab = targetTab;
   }
   if (targetTab === "contact") {
-    //   appendNewTab(mainContainer, createContact());
+    appendNewTab(mainContainer, createContact());
     currentTab = targetTab;
   }
 }

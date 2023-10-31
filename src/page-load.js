@@ -1,5 +1,6 @@
 import { createHome } from "./home";
 import { createMenu } from "./menu";
+import { createContact } from "./contact";
 import { appendNewTab } from "./index";
 
 // Header
@@ -86,6 +87,3 @@ function initializeWebsite() {
 }
 export default initializeWebsite;
 export { createNavbar, createNavItems, getNavItems, createMainContainer };
-
-// add all into one initializeWebsite() function that runs on page load in index.js, starting with home.
-// import createHome() from home.js to run inside of initializeWebsite, and set the contents.
